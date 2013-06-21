@@ -1,0 +1,25 @@
+<!doctype html>
+<html>
+<head>
+<title>HashACat!</title>
+<link rel=stylesheet type=text/css href="{{ url_for('static', filename='style.css') }}">
+<link href='http://fonts.googleapis.com/css?family=Expletus+Sans' rel='stylesheet' type='text/css'>
+<link href='http://fonts.googleapis.com/css?family=Noto+Serif' rel='stylesheet' type='text/css'>
+<script type="text/javascript">
+function getCat(){
+        hashVal = document.getElementById("hashInput").value
+        if (hashVal != ''){
+                window.location.href = 'http://hashacat.com/hash/' + hashVal
+	}
+	return false;
+}
+</script>
+</head>
+<body>
+<div id="page">
+  <div id="header"><a href="http://hashacat.com">HashACat!</a></div>
+  {% block body %}
+  {% endblock %}
+</div>
+<div id="infoLink"><a href="info">More info!</a></div>
+</html>

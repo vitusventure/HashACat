@@ -1,0 +1,48 @@
+body {
+	background-color: #1A2935;
+}
+#header {
+	text-align: center;
+}
+#header a {
+	font-size: 100px;
+        color: #644436;
+        font-family: 'Expletus Sans', cursive;
+	text-decoration: none;
+}
+#page {
+	width: 80%;
+	margin-left: auto;
+	margin-right: auto;
+}
+#inputForm {
+	text-align: center;
+	padding-top: 15px;
+}
+#hashInput {
+	padding: 10px;
+	font-size: 26px;
+}
+#subButton {
+	font-size: 30px;
+	margin-top: 25px;
+	padding: 5px;
+}
+#infoLink {
+	position: absolute;
+	right: 0;
+	bottom: 0;
+}
+#infoLink a {
+	color: #DFC184;
+	text-decoration: none;
+	font-size: large;
+}
+#infoBlock h2 {
+	font-family: 'Expletus Sans', cursive;
+	color: #8F6048;
+}
+#infoBlock p {
+	font-family: 'Noto Serif', serif;
+	color: #DFC184;
+}

@@ -1,0 +1,10 @@
+{% extends "layout.html" %}
+{% block body %}
+<div id="inputForm">
+<form onSubmit="return getCat();">
+	<input type="text" id="hashInput" name="hash" size="55" placeholder="SHA1 or MD5 Hash">
+	<br>
+	<button id="subButton" onClick="return getCat();">Give me a cat!</button>
+</form>
+</div>
+{% endblock %}
