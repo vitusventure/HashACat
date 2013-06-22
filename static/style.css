@@ -1,5 +1,6 @@
 body {
 	background-color: #1A2935;
+	font-family: 'Noto Serif', serif;
 }
 #header {
 	text-align: center;
@@ -31,6 +32,7 @@ body {
 #infoLink {
 	position: absolute;
 	right: 0;
+	padding-right: 5px;
 	bottom: 0;
 }
 #infoLink a {
@@ -43,6 +45,5 @@ body {
 	color: #8F6048;
 }
 #infoBlock p {
-	font-family: 'Noto Serif', serif;
 	color: #DFC184;
 }
