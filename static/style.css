@@ -35,15 +35,36 @@ body {
 	padding-right: 5px;
 	bottom: 0;
 }
-#infoLink a {
+a {
 	color: #DFC184;
 	text-decoration: none;
 	font-size: large;
 }
-#infoBlock h2 {
+h2 {
 	font-family: 'Expletus Sans', cursive;
 	color: #8F6048;
 }
+#generateCats h2 {
+	padding: 0px;
+	margin: 0px;
+}
 #infoBlock p {
 	color: #DFC184;
+}
+#generateCats {
+	display: none;
+	position: absolute;
+	left: 5px;
+	bottom: 25px;
+	padding: 10px;
+	border: 1px double #DFC184;
+}
+#generateCatsLink {
+	position: absolute;
+	left: 0;
+	bottom: 0;
+	padding-left: 5px;
+	color: #DFC184;
+	text-decoration: none;
+	font-size: large;
 }

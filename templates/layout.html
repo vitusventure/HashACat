@@ -3,16 +3,11 @@
 <head>
 <title>HashACat!</title>
 <link rel=stylesheet type=text/css href="{{ url_for('static', filename='style.css') }}">
-<link href='http://fonts.googleapis.com/css?family=Expletus+Sans' rel='stylesheet' type='text/css'>
-<link href='http://fonts.googleapis.com/css?family=Noto+Serif' rel='stylesheet' type='text/css'>
+<link href='http://fonts.googleapis.com/css?family=Noto+Serif|Expletus+Sans' rel='stylesheet' type='text/css'>
+<script src="../static/scripts/jquery-1.10.1.min.js"></script>
+<script src="../static/scripts/siteScripts.js"></script>
 <script type="text/javascript">
-function getCat(){
-        hashVal = document.getElementById("hashInput").value
-        if (hashVal != ''){
-                window.location.href = 'http://hashacat.com/hash/' + hashVal
-	}
-	return false;
-}
+
 </script>
 </head>
 <body>
@@ -21,5 +16,4 @@ function getCat(){
   {% block body %}
   {% endblock %}
 </div>
-<div id="infoLink"><a href="info">More info!</a></div>
 </html>
