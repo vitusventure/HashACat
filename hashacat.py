@@ -5,6 +5,7 @@ import re
 import os, os.path
 import hashlib
 import random
+import base64
 app = Flask(__name__)
 
 def updateCatCount():
@@ -38,6 +39,12 @@ def displayInfo():
 @app.route('/randomHash')
 def getRandomHash():
 	hash = hashlib.sha1(str(random.random())).hexdigest()
+	return jsonify(hash=hash)
+	
+	
+@app.route('/hash/<hashText>')
+def getHash(hashText):
+	hash = hashlib.sha1(str(base64.b64decode(hashText))).hexdigest()
 	return jsonify(hash=hash)
 
 
