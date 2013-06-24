@@ -44,9 +44,13 @@ def getRandomHash():
 	
 @app.route('/hash/<hashText>')
 def getHash(hashText):
-	hash = hashlib.sha1(str(base64.b64decode(hashText))).hexdigest()
-	return jsonify(hash=hash)
-
+	try:
+		decoded = base64.b64decode(hashText)
+		hash = hashlib.sha1(str(decoded[:255])).hexdigest()
+		return jsonify(hash=hash)
+	except:
+		return "Couldn't hash that, is it base64?"
+	
 
 @app.route('/')
 def displayIndex():
