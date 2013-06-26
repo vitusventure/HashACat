@@ -1,6 +1,8 @@
 #!venv/bin/python
 
-from flask import Flask, jsonify, send_file, request, render_template
+from flask import Flask, send_file, request, render_template
+from flask.ext.jsonpify import jsonify
+from corsSupport import crossdomain
 import re
 import os, os.path
 import hashlib
@@ -18,6 +20,7 @@ def verifyHash(hash):
 		return bool(re.search("^([a-f0-9]{40})$|^([a-f0-9]{32})$", hash))
 
 @app.route('/cat/<hash>')
+@crossdomain(origin='*')
 def returnCat(hash):
 	if verifyHash(hash):
 		catID = int(hash, 16) % catCount
