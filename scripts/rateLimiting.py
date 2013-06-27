@@ -4,11 +4,11 @@ import memcache
 
 mc = memcache.Client(['127.0.0.1:11211'], debug=0)
 
-def rate_limit(limitPeriod, connsPerPeriod, domain):
+def rate_limit(limitPeriod, connsPerPeriod):
 	def wrapper(f):
 		@wraps(f)
 		def wrapped(*args, **kwargs):
-			keyID = str(request.headers.getlist("X-Real-IP")[0]) + domain
+			keyID = str(request.headers.getlist("X-Real-IP")[0]) + "-" + str(request.endpoint)
 			numRequests = mc.get(keyID)
 			if not numRequests:
 				mc.set(keyID, "1", int(limitPeriod))

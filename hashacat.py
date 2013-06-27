@@ -22,7 +22,7 @@ def verifyHash(hash):
 
 @app.route('/cat/<hash>')
 @crossdomain(origin='*')
-@rate_limit(5, 3, 'getCat')
+@rate_limit(5, 3)
 def returnCat(hash):
 	if verifyHash(hash):
 		catID = int(hash, 16) % catCount
@@ -42,14 +42,14 @@ def displayInfo():
 	
 	
 @app.route('/randomHash')
-@rate_limit(5, 3, 'generateHash')
+@rate_limit(5, 3)
 def getRandomHash():
 	hash = hashlib.sha1(str(random.random())).hexdigest()
 	return jsonify(hash=hash)
 	
 	
 @app.route('/hash/<hashText>')
-@rate_limit(5, 3, 'generateHash')
+@rate_limit(5, 3)
 def getHash(hashText):
 	try:
 		decoded = base64.b64decode(hashText)
