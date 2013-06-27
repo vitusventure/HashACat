@@ -6,6 +6,6 @@ import sys
 sys.path.append("./scripts")
 from hashacat import app
 
-http_server = HTTPServer(WSGIContainer(app))
+http_server = HTTPServer(WSGIContainer(app), xheaders=True)
 http_server.listen(5000)
 IOLoop.instance().start()

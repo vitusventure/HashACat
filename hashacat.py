@@ -3,6 +3,7 @@
 from flask import Flask, send_file, request, render_template
 from flask.ext.jsonpify import jsonify
 from corsSupport import crossdomain
+from rateLimiting import rate_limit
 import re
 import os, os.path
 import hashlib
@@ -21,6 +22,7 @@ def verifyHash(hash):
 
 @app.route('/cat/<hash>')
 @crossdomain(origin='*')
+@rate_limit(5, 3)
 def returnCat(hash):
 	if verifyHash(hash):
 		catID = int(hash, 16) % catCount
@@ -58,7 +60,7 @@ def getHash(hashText):
 @app.route('/')
 def displayIndex():
 	return render_template('mainPage.html')
-	
+
 
 if __name__ == '__main__':
 	app.run()
