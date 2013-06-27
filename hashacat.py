@@ -42,12 +42,14 @@ def displayInfo():
 	
 	
 @app.route('/randomHash')
+@rate_limit(5, 3)
 def getRandomHash():
 	hash = hashlib.sha1(str(random.random())).hexdigest()
 	return jsonify(hash=hash)
 	
 	
 @app.route('/hash/<hashText>')
+@rate_limit(5, 3)
 def getHash(hashText):
 	try:
 		decoded = base64.b64decode(hashText)
