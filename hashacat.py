@@ -1,4 +1,4 @@
-#!venv/bin/python
+#!/home/john/cats/venv/bin/python
 
 from flask import Flask, send_file, request, render_template
 from flask.ext.jsonpify import jsonify

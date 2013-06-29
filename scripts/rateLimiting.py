@@ -13,7 +13,8 @@ def rate_limit(limitPeriod, connsPerPeriod):
 			if not numRequests:
 				mc.set(keyID, "1", int(limitPeriod))
 				numRequests = "1"
-			mc.incr(keyID)
+			else:
+				mc.incr(keyID)
 			if (int(numRequests) > int(connsPerPeriod)):
 				return "You have been rate limited, try again in a few seconds (%s requests)" % numRequests, 429
 			return f(*args, **kwargs)
