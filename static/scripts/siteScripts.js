@@ -12,7 +12,7 @@ function textToHash (hashText) {
 	var hashText = hashText.substring(0,255);
 	encodedHashText = window.btoa(hashText);
 	$.getJSON('http://hashacat.com/hash/' + encodedHashText, function(data) {
-		window.location.href = 'http://hashacat.com/cat/' + data.hash;
+		getCat(data.hash);
 	});
 }
 
