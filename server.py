@@ -1,4 +1,4 @@
-#!/home/john/cats/venv/bin/python
+#!./venv/bin/python
 from tornado.wsgi import WSGIContainer
 from tornado.httpserver import HTTPServer
 from tornado.ioloop import IOLoop
