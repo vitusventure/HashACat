@@ -31,5 +31,8 @@ $(document).ready(function () {
 		e.preventDefault();
 		return false;
 	});
+	$('#randomCats').click(function (){
+		getRandomCat();
+	});
 });
 

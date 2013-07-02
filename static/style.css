@@ -51,15 +51,7 @@ h2 {
 #infoBlock p {
 	color: #DFC184;
 }
-#generateCats {
-	display: none;
-	position: absolute;
-	left: 5px;
-	bottom: 25px;
-	padding: 10px;
-	border: 1px double #DFC184;
-}
-#generateCatsLink {
+#randomCats {
 	position: absolute;
 	left: 0;
 	bottom: 0;
