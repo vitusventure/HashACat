@@ -26,11 +26,17 @@ def verifyHash(hash):
 def returnCat(hash):
 	if verifyHash(hash):
 		catID = int(hash, 16) % catCount
-		catURL = "http://cats.hashacat.com/" + str(catID) + ".jpg"
+		if request.args.get('size') == 'small':
+			catURL = "http://cats.hashacat.com/small/" + str(catID) + ".gif"
+		else:
+			catURL = "http://cats.hashacat.com/" + str(catID) + ".jpg"
 		if request.args.get('format') == 'json':
 			return jsonify(cat=catURL)
 		else:
-			catPath = 'static/cats/' + str(catID) + '.jpg'
+			if request.args.get('size') == 'small'
+				catPath = 'static/cats/small' + str(catID) + '.gif'
+			else:
+				catPath = 'static/cats/' + str(catID) + '.jpg'
 			return send_file(catPath)
 	else:
 		return "Bad hash!"
