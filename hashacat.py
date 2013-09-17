@@ -33,7 +33,7 @@ def returnCat(hash):
 		if request.args.get('format') == 'json':
 			return jsonify(cat=catURL)
 		else:
-			if request.args.get('size') == 'small'
+			if request.args.get('size') == 'small':
 				catPath = 'static/cats/small' + str(catID) + '.gif'
 			else:
 				catPath = 'static/cats/' + str(catID) + '.jpg'
