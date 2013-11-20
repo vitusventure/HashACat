@@ -40,6 +40,15 @@ def returnCat(hash):
 			return send_file(catPath)
 	else:
 		return "Bad hash!"
+		
+@app.route('/random')
+@crossdomain(origin='*')
+@rate_limit(5, 3)
+def returnRandomCat():
+	hash = hashlib.sha1(str(random.random())).hexdigest()
+	catID = int(hash, 16) % catCount
+	catPath = 'static/cats/' + str(catID) + '.jpg'
+	return send_file(catPath)
 
 
 @app.route('/info')
