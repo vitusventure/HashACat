@@ -47,8 +47,8 @@ def returnCat(hash):
 def returnRandomCat():
 	hash = hashlib.sha1(str(random.random())).hexdigest()
 	catID = int(hash, 16) % catCount
-	catPath = 'static/cats/' + str(catID) + '.jpg'
-	return send_file(catPath)
+	cat_url = "http://cats.hashacat.com/" + str(catID) + ".jpg"
+	return render_template('random.html', cat_url=cat_url)
 
 
 @app.route('/info')
